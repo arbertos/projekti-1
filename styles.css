@@ -1,0 +1,326 @@
+/* ===== Värit muuttujina, jotta niitä on helppo vaihtaa yhdestä paikasta ===== */
+:root {
+  --tausta: #f4f6f8;
+  --kortti: #ffffff;
+  --teksti: #1f2933;
+  --harmaa: #6b7280;
+  --paavari: #2f855a;
+  --paavari-tumma: #276749;
+  --virhe: #d64545;
+  --reuna: #d9dee3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--tausta);
+  color: var(--teksti);
+  line-height: 1.5;
+}
+
+/* ===== Yläpalkki ===== */
+header {
+  background: var(--paavari);
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 4px 0 0;
+  opacity: 0.9;
+}
+
+/* ===== Asettelu: kaksi saraketta, lista koko leveydellä ===== */
+main {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+#lista-osio,
+.viikko-valitsin {
+  grid-column: 1 / -1;
+}
+
+/* ===== Viikon valinta ===== */
+.viikko-valitsin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.viikko-valitsin h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  min-width: 260px;
+  text-align: center;
+}
+
+.viikko-valitsin button {
+  background: var(--kortti);
+  border: 1px solid var(--reuna);
+  color: var(--paavari);
+}
+
+.viikko-valitsin button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.kortti {
+  background: var(--kortti);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.kortti h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.otsikkorivi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.otsikkorivi h2 {
+  margin: 0;
+}
+
+/* ===== Lomake ===== */
+.kentta {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+  padding: 8px 10px;
+  border: 2px solid var(--reuna);
+  border-radius: 6px;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--paavari);
+}
+
+/* Rasitus-valintanapit vierekkäin */
+fieldset.kentta {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  border: 2px solid var(--reuna);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+fieldset label {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* ===== Virheet: punainen reuna ja virheteksti ===== */
+.virheellinen {
+  border-color: var(--virhe) !important;
+  background: #fdf2f2;
+}
+
+.virhe {
+  color: var(--virhe);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+fieldset .virhe {
+  width: 100%;
+}
+
+/* ===== Napit ===== */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: var(--paavari);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover {
+  background: var(--paavari-tumma);
+}
+
+#yhteenveto-nappi {
+  background: var(--tausta);
+  border: 1px solid var(--reuna);
+}
+
+/* JavaScript lisää tai poistaa tämän luokan piilottaakseen elementin */
+.piilossa {
+  display: none;
+}
+
+/* ===== Yhteenvedon pylväät ===== */
+.pylvas-rivi {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.pylvas-tausta {
+  height: 18px;
+  background: var(--tausta);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Täytön leveys asetetaan JavaScriptissä prosentteina */
+.pylvas-tayte {
+  height: 100%;
+  background: var(--paavari);
+}
+
+.pylvas-arvo {
+  color: var(--harmaa);
+  white-space: nowrap;
+}
+
+/* ===== Treenilista ===== */
+#treeni-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.treeni {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  background: var(--tausta);
+  border-left: 5px solid var(--reuna);
+  border-radius: 6px;
+}
+
+/* Vasemman reunan väri kertoo rasituksen */
+.rasitus-kevyt {
+  border-left-color: #68d391;
+}
+
+.rasitus-keskitaso {
+  border-left-color: #f6ad55;
+}
+
+.rasitus-raskas {
+  border-left-color: #e53e3e;
+}
+
+.treeni-tiedot {
+  display: flex;
+  flex-direction: column;
+}
+
+.treeni-tiedot span,
+.treeni-tiedot small {
+  color: var(--harmaa);
+}
+
+.poista-nappi {
+  background: transparent;
+  color: var(--virhe);
+  border: 1px solid var(--virhe);
+}
+
+.poista-nappi:hover {
+  background: var(--virhe);
+  color: #ffffff;
+}
+
+#tyhja-viesti {
+  color: var(--harmaa);
+  font-style: italic;
+}
+
+/* ===== Kapea näyttö (puhelin): yksi sarake ===== */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Tumma tila: samat muuttujat, tummat arvot ja violetti pääväri ===== */
+body.tumma {
+  --tausta: #121417;
+  --kortti: #1e2227;
+  --teksti: #e5e7eb;
+  --harmaa: #9ca3af;
+  --reuna: #374151;
+  --paavari: #7c3aed;
+  --paavari-tumma: #6d28d9;
+  color-scheme: dark; /* kalenteri ja muut selaimen osat myös tummiksi */
+}
+
+/* Kentät käyttävät teeman värejä */
+input,
+select {
+  background: var(--kortti);
+  color: var(--teksti);
+}
+
+body.tumma .virheellinen {
+  background: #3b1f1f;
+}
+
+/* Darkmode-nappi headerissa */
+#darkmode-nappi {
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}

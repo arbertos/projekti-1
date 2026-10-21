@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treenikirjanpito</title>
+  <!-- Ulkoinen CSS-tiedosto -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Treenipäiväkirja</h1>
+    <p>Pysy kartalla treeneistä ja seuraa kehitystäsi!</p>
+    <button type="button" id="darkmode-nappi">🌙 Tumma tila</button>
+  </header>
+
+  <main>
+
+    <!-- 0. VIIKON VALINTA: nuolilla selataan viikkoja -->
+    <section class="viikko-valitsin">
+      <button type="button" id="edellinen-viikko" aria-label="Edellinen viikko">&#9664;</button>
+      <h2 id="viikko-otsikko">Viikko</h2>
+      <button type="button" id="seuraava-viikko" aria-label="Seuraava viikko">&#9654;</button>
+    </section>
+
+    <!-- 1. LOMAKE: uuden treenin lisääminen -->
+    <section class="kortti" id="lomake-osio">
+      <h2>Lisää treeni</h2>
+
+      <!-- novalidate = selaimen omat tarkistukset pois, tarkistetaan itse JavaScriptillä -->
+      <form id="treeni-lomake" novalidate>
+
+        <div class="kentta">
+          <label for="pvm">Päivämäärä</label>
+          <input type="date" id="pvm">
+          <span class="virhe" id="pvm-virhe"></span>
+        </div>
+
+        <div class="kentta">
+          <label for="laji">Laji</label>
+          <select id="laji">
+            <option value="">-- Valitse laji --</option>
+            <option value="Kuntosali">Kuntosali</option>
+            <option value="Juoksu">Juoksu</option>
+            <option value="Pyöräily">Pyöräily</option>
+            <option value="Kävely">Kävely</option>
+            <option value="Jääkiekko">Jääkiekko</option>
+            <option value="Muu">Muu</option>
+          </select>
+          <span class="virhe" id="laji-virhe"></span>
+        </div>
+
+        <div class="kentta">
+          <label for="kesto">Kesto (minuuttia)</label>
+          <input type="number" id="kesto" placeholder="esim. 45">
+          <span class="virhe" id="kesto-virhe"></span>
+        </div>
+
+        <fieldset class="kentta" id="rasitus-kentta">
+          <legend>Rasitus</legend>
+          <label><input type="radio" name="rasitus" value="Kevyt"> Kevyt</label>
+          <label><input type="radio" name="rasitus" value="Keskitaso"> Keskitaso</label>
+          <label><input type="radio" name="rasitus" value="Raskas"> Raskas</label>
+          <span class="virhe" id="rasitus-virhe"></span>
+        </fieldset>
+
+        <div class="kentta">
+          <label for="muistiinpanot">Muistiinpanot (vapaaehtoinen)</label>
+          <input type="text" id="muistiinpanot" placeholder="esim. jalkapäivä, 5 km lenkki">
+          <span class="virhe" id="muistiinpanot-virhe"></span>
+        </div>
+
+        <button type="submit">Lisää treeni</button>
+      </form>
+    </section>
+
+    <!-- 2. YHTEENVETO: kokonaisaika ja pylväät lajeittain -->
+    <section class="kortti" id="yhteenveto-osio">
+      <div class="otsikkorivi">
+        <h2>Yhteenveto</h2>
+        <button type="button" id="yhteenveto-nappi">Piilota</button>
+      </div>
+
+      <div id="yhteenveto-sisalto">
+        <p>Viikon treenit yhteensä:<strong id="kokonaisaika">0 min</strong></p>
+        <!-- JavaScript luo pylväät tähän -->
+        <div id="pylvaat"></div>
+      </div>
+    </section>
+
+    <!-- 3. LISTA: kirjatut treenit ja suodatus -->
+    <section class="kortti" id="lista-osio">
+      <div class="otsikkorivi">
+        <h2>Treenit</h2>
+        <div>
+          <label for="suodatin">Näytä:</label>
+          <select id="suodatin">
+            <option value="Kaikki">Kaikki</option>
+            <option value="Kuntosali">Kuntosali</option>
+            <option value="Juoksu">Juoksu</option>
+            <option value="Pyöräily">Pyöräily</option>
+            <option value="Uinti">Uinti</option>
+            <option value="Jooga">Jooga</option>
+            <option value="Muu">Muu</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- JavaScript lisää treenit tähän listaan -->
+      <ul id="treeni-lista"></ul>
+      <p id="tyhja-viesti">Ei vielä kirjattuja treenejä.</p>
+    </section>
+
+  </main>
+
+  <!-- Ulkoinen JavaScript-tiedosto, ladataan lopussa jotta HTML on jo valmis -->
+  <script src="script.js"></script>
+</body>
+</html>
