@@ -285,10 +285,10 @@ function piirraLista() {
     tiedot.append(otsikko, lisatiedot);
 
     // Kuvaus näytetään vain, jos sellainen on kirjoitettu
-    if (treeni.kuvaus !== "") {
-      const kuvaus = document.createElement("small");
-      kuvaus.textContent = treeni.kuvaus;
-      tiedot.append(kuvaus);
+    if (treeni.muistiinpanot !== "") {
+      const muistiinpanot = document.createElement("small");
+      muistiinpanot.textContent = treeni.muistiinpanot;
+      tiedot.append(muistiinpanot);
     }
 
     const poistaNappi = document.createElement("button");
