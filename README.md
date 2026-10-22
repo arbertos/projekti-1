@@ -26,13 +26,13 @@ Treenipäiväkirja on selaimessa toimiva sovellus, johon käyttäjä voi kirjata
 
 ## Verkkolinkit
 
-* Julkaistu sovellus: [Lisää tähän GitHub Pages -osoite](https://yourusername.github.io/your-repository/)
-* GitHub-repositorio: [Lisää tähän repositorion osoite](https://github.com/yourusername/your-repository)
+* Julkaistu sovellus:(https://arbertos.github.io/projekti-1/)
+* GitHub-repositorio:(https://github.com/arbertos/projekti-1)
 * Projektin videoesittely: [Lisää tähän videon osoite](https://example.com/)
 
 ## Tietoja sovelluksesta
 
-Treenikirjanpito on verkkosovellus, jolla voi pitää kirjaa omista treeneistään. Käyttäjä kirjaa lomakkeella treenin päivämäärän, lajin, keston, rasitustason ja halutessaan lyhyet muistiinpanot. Sovellus tarkistaa syötteet ennen tallennusta ja näyttää virheellisen kentän punaisella reunalla ja virheilmoituksella.
+Treenipäiväkirja on verkkosovellus, jolla voi pitää kirjaa omista treeneistään. Käyttäjä kirjaa lomakkeella treenin päivämäärän, lajin, keston, rasitustason ja halutessaan lyhyet muistiinpanot. Sovellus tarkistaa syötteet ennen tallennusta ja näyttää virheellisen kentän punaisella reunalla ja virheilmoituksella.
 
 Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin), ja viikkoja voi selata nuolinapeilla. Otsikossa näkyy viikkonumero ja päivämäärät. Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin) viikkonumeroineen, ja viikkoja voi selata nuolinapeilla. Kirjatut treenit näkyvät listassa uusin ensin, ja rasitustaso näkyy rivin reunan värinä (vihreä = kevyt, oranssi = keskitaso, punainen = raskas). Listaa voi suodattaa lajin mukaan, ja treenejä voi poistaa. Yhteenveto näyttää treenien kokonaisajan sekä ajan ja prosenttiosuuden lajeittain pylväinä. Yhteenvedon voi piilottaa ja tuoda takaisin napista. Tiedot tallentuvat selaimen localStorageen, joten ne säilyvät sivun päivityksen jälkeen.
 
@@ -46,7 +46,7 @@ Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin), ja viik
 ### Sovelluksen käyttö
 
 1. Avaa julkaistu sovellus yllä olevasta linkistä.
-2. Täytä lomake: päivämäärä (oletuksena tämä päivä), laji, kesto minuutteina ja rasitustaso. Muistiinpanot ovat vapaaehtoisia.
+2. Täytä lomake: päivämäärä, laji, kesto minuutteina ja rasitustaso. Muistiinpanot ovat vapaaehtoisia.
 3. Paina **Lisää treeni**. Jos jokin kenttä on virheellinen, se korostuu punaisella ja alle tulee ohje.
 4. Treeni ilmestyy listaan ja yhteenveto päivittyy. Näkymä siirtyy sille viikolle, jolle treeni kirjattiin.
 5. Selaa viikkoja yläosan nuolinapeista. Tuleville viikoille ei voi siirtyä.

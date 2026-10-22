@@ -218,7 +218,7 @@ lomake.addEventListener("submit", function (tapahtuma) {
     laji: lajiKentta.value,
     kesto: Number(kestoKentta.value),
     rasitus: document.querySelector('input[name="rasitus"]:checked').value,
-    kuvaus: kuvausKentta.value.trim()
+    muistiinpanot: muistiinpanotKentta.value.trim()
   };
 
   treenit.push(treeni);
