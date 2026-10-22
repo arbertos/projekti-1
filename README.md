@@ -53,13 +53,7 @@ Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin), ja viik
 6. Valitse **Näytä**-valikosta laji, jos haluat nähdä vain sen lajin treenit.
 7. Poista treeni rivin **Poista**-napista.
 8. Piilota tai näytä yhteenveto sen oikean yläkulman napista.
-9. Päivitä sivu: treenit säilyvät, koska ne on tallennettu selaimeen.
-
-### Sovelluksen käynnistäminen paikallisesti
-
-1. Kloonaa tai lataa tämä repositorio omalle koneellesi.
-2. Avaa projektikansio.
-3. Avaa `index.html` selaimessa.
+9. Päivitä sivu: treenit säilyvät, sillä ne on tallennettu selaimeen.
 
 ## Kuvakaappaukset
 

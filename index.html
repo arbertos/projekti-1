@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Treenikirjanpito</title>
+  <title>Treenipäiväkirja</title>
   <!-- Ulkoinen CSS-tiedosto -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,18 +17,18 @@
 
   <main>
 
-    <!-- 0. VIIKON VALINTA: nuolilla selataan viikkoja -->
+    <!-- VIIKON VALINTA -->
     <section class="viikko-valitsin">
       <button type="button" id="edellinen-viikko" aria-label="Edellinen viikko">&#9664;</button>
       <h2 id="viikko-otsikko">Viikko</h2>
       <button type="button" id="seuraava-viikko" aria-label="Seuraava viikko">&#9654;</button>
     </section>
 
-    <!-- 1. LOMAKE: uuden treenin lisääminen -->
+    <!-- 1. Lomake: uuden treenin lisääminen -->
     <section class="kortti" id="lomake-osio">
       <h2>Lisää treeni</h2>
 
-      <!-- novalidate = selaimen omat tarkistukset pois, tarkistetaan itse JavaScriptillä -->
+      <!-- novalidate = selaimen omat tarkistukset pois, tarkistetaan ite JavaScriptillä -->
       <form id="treeni-lomake" novalidate>
 
         <div class="kentta">
@@ -64,18 +64,16 @@
           <label><input type="radio" name="rasitus" value="Raskas"> Raskas</label>
           <span class="virhe" id="rasitus-virhe"></span>
         </fieldset>
-
         <div class="kentta">
           <label for="muistiinpanot">Muistiinpanot (vapaaehtoinen)</label>
           <input type="text" id="muistiinpanot" placeholder="esim. jalkapäivä, 5 km lenkki">
           <span class="virhe" id="muistiinpanot-virhe"></span>
         </div>
-
         <button type="submit">Lisää treeni</button>
       </form>
     </section>
 
-    <!-- 2. YHTEENVETO: kokonaisaika ja pylväät lajeittain -->
+    <!-- 2. Yhteenveto: kokonaisaika ja pylväät lajeittain -->
     <section class="kortti" id="yhteenveto-osio">
       <div class="otsikkorivi">
         <h2>Yhteenveto</h2>
@@ -89,7 +87,7 @@
       </div>
     </section>
 
-    <!-- 3. LISTA: kirjatut treenit ja suodatus -->
+    <!-- 3. Lista: kirjatut treenit ja filtering -->
     <section class="kortti" id="lista-osio">
       <div class="otsikkorivi">
         <h2>Treenit</h2>

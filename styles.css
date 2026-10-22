@@ -306,7 +306,7 @@ body.tumma {
   color-scheme: dark; /* kalenteri ja muut selaimen osat myös tummiksi */
 }
 
-/* Kentät käyttävät teeman värejä */
+/* Kentät käyttää teeman värejä */
 input,
 select {
   background: var(--kortti);

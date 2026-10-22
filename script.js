@@ -103,13 +103,13 @@ function viikonTreenit() {
   const alku = pvmTekstiksi(valittuViikko);
   const loppu = pvmTekstiksi(sunnuntai);
 
-  // Päivämäärät ovat muotoa "2026-10-21", joten niitä voi verrata tekstinä
+  // Päivämäärät ovat muotoa "2026-10-21"
   return treenit.filter(function (treeni) {
     return treeni.pvm >= alku && treeni.pvm <= loppu;
   });
 }
 
-// Päivittää otsikon, esim. "Viikko 43 · 19.10.–25.10.2026"
+// Päivittää otsikon, esim.
 function piirraViikkoOtsikko() {
   const sunnuntai = new Date(valittuViikko);
   sunnuntai.setDate(sunnuntai.getDate() + 6);
@@ -119,7 +119,7 @@ function piirraViikkoOtsikko() {
     valittuViikko.getDate() + "." + (valittuViikko.getMonth() + 1) + ".–" +
     sunnuntai.getDate() + "." + (sunnuntai.getMonth() + 1) + "." + sunnuntai.getFullYear();
 
-  // Tulevaisuuteen ei voi siirtyä, koska sinne ei voi kirjata treenejä
+  // Tulevaisuuteen ei voi siirtyä.
   const kuluvaViikko = viikonMaanantai(new Date());
   seuraavaNappi.disabled = valittuViikko.getTime() >= kuluvaViikko.getTime();
 }
@@ -146,7 +146,7 @@ function poistaVirhe(kentta, virheId) {
   document.getElementById(virheId).textContent = "";
 }
 
-// Tarkistaa kaikki kentät. Palauttaa true, jos kaikki on kunnossa.
+// Tarkistaa kentät. Palauttaa true, jos kaikki on kunnossa.
 function tarkistaLomake() {
   let kunnossa = true;
 
@@ -181,7 +181,7 @@ function tarkistaLomake() {
     poistaVirhe(kestoKentta, "kesto-virhe");
   }
 
-  // Rasitus: jokin valintanappi pitää olla valittuna
+  // Rasitus: jokin valinta pitää olla valittuna
   const valittuRasitus = document.querySelector('input[name="rasitus"]:checked');
   if (valittuRasitus === null) {
     naytaVirhe(rasitusKentta, "rasitus-virhe", "Valitse rasitustaso.");
@@ -253,7 +253,7 @@ function poistaTreeni(id) {
 
 
 // ============================================================
-// 6. LISTAN PIIRTÄMINEN (DOM-skriptaus)
+// 6. LISTAN PIIRTÄMINEN (DOM)
 // ============================================================
 function piirraLista() {
   lista.innerHTML = ""; // tyhjennetään vanha lista
