@@ -39,7 +39,7 @@ function tallenna() {
 // 3. APUFUNKTIOT
 // ============================================================
 
-// Muuttaa minuutit luettavaan muotoon, esim. 135 -> "2 h 15 min"
+// Muuttaa minuutit luettavaan muotoon
 function muotoileAika(minuutit) {
   const tunnit = Math.floor(minuutit / 60);
   const loput = minuutit % 60;
