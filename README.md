@@ -22,13 +22,13 @@ Treenipäiväkirja on selaimessa toimiva sovellus, johon käyttäjä voi kirjata
 
 ### luonnos
 
-![Luonnos](rautalanka.png)
+![Luonnos](kuvat/rautalanka.png)
 
 ## Verkkolinkit
 
 * Julkaistu sovellus:(https://arbertos.github.io/projekti-1/)
 * GitHub-repositorio:(https://github.com/arbertos/projekti-1)
-* Projektin videoesittely: [Lisää tähän videon osoite](https://example.com/)
+* Projektin videoesittely piti laittaa youtubeen kun laurea.video palvelu ei toiminut:(https://www.youtube.com/watch?v=XEQIt4zu-O8)
 
 ## Tietoja sovelluksesta
 
@@ -57,7 +57,7 @@ Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin), ja viik
 
 ## Kuvakaappaukset
 
-![Kuvakaappaus sovelluksesta](kuvat/kuvakaappaus.png)
+![Kuvakaappaus sovelluksesta](kuvat/reeni.png)
 
 ## Tunnetut virheet / puutteet
 
@@ -66,19 +66,23 @@ Sovellus näyttää kerrallaan yhden viikon (maanantaista sunnuntaihin), ja viik
 
 ## Oma arvio ja oppimisen reflektointi
 
-* Missä onnistuin?
-* Mikä oli haastavaa?
-* Mitä parantaisin, jos aikaa olisi enemmän?
-* Mitä opin HTML:stä, CSS:stä, JavaScriptistä ja DOM-skriptauksesta?
-* Mikä jäi epäselväksi tai mistä haluaisin oppia lisää?
-* Oma arvio projektista: xx/10 pistettä
+* Mielestäni onnistuin sovelluksen toimivuudessa ja käytettävyydessä parhaiten
+* Haastavinta oli päivämäärien ja viikkojen käsittely. JavaScriptin getDay() alkaa sunnuntaista, mutta Suomessa viikko alkaa maanantaista. Siksi tarvitaan kikka (getDay() + 6) % 7, joka laskee, montako päivää on kulunut maanantaista. Suomessa käytetään ISO-viikkoja, joissa viikko 1 on se, jolla on vuoden ensimmäinen torstai. Siksi koodi siirtyy viikon torstaihin ennen laskemista, muuten vuodenvaihteen viikot menisivät väärin. Näihin käytin tekoälyä (claude).
+* Treemin muokkaus toiminto. Parempi visualisointi. Viikkovertailut kehityksen seurantamisen parantamiseen. Tietojen varmuuskopiointi. Ja se että käyttäjä voisi lisätä omat lajinsa. Ja sitten vielä varmistus treenit poistamiseen.
+* HTML:ässä opin novalidate, jolla selaimen omat tarkitukset saa pois. CSS osaan paremmin värimuuttujat ja luokkien käytön. JS ja DOM skriptuksesta opin elemettien hakemisen ja niiden muokkaamisen. classlist.add, remove, ja toggle piilottamiseen ja dark moden vaihtamiseen. localStorgae ja JSON: tallennettava muutetaan tekstiksi ja takaisin.
+* Mahdollisimman paljon kaikesta.
+* Oma arvio projektista: 06/10 pistettä. Olisin voinut käyttää enemmän aikaa projektiin jos olisin aloittanut aikaisemmin.
 
 ## Lähteet ja kiitokset
 
-* [Lähteen tai tutoriaalin nimi](https://example.com/)
 * Käytetty tekoälytyökalu: Claude (Anthropic)
-  * Miten työkalua käytettiin: ...
+  * Miten työkalua käytettiin: Tekoälyllä tehtiin viikkologiikka , viikonMaanantai(), joka muuttaa JavaScriptin   sunnuntaista alkavan viikon maanantaista alkavaksi kaavalla (getDay() + 6) % 7, ja viikkonumero(), joka laskee ISO-viikkonumeron vuoden ensimmäisen torstain perusteella.
+  Päivämäärien aikavyöhykeongelma: + "T00:00", jotta päivämäärä ei vaihdu UTC-ajan takia väärin.
 
-## Lisenssi
+  Lomakkeen validointi: kaikki tarkistukset ja virheilmoitusten näyttäminen ja poistaminen kirjoitettaessa (input-tapahtuma) 
 
-Tämä projekti on lisensoitu MIT-lisenssillä.
+  Yhteenvedon laskenta: minuuttien kerääminen lajeittain olioon, järjestäminen ja prosenttien laskeminen pylväiden leveyksiksi
+
+  Virheiden etsintä: julkaistun koodin testaaminen ja virheiden havaitseminen ja korjaaminen.Päivämäärien aikavyöhykeongelma: + "T00:00", jotta päivämäärä ei vaihdu UTC-ajan takia väärin
+
+Kiitokset.
